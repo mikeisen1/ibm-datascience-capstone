@@ -60,7 +60,7 @@ app.layout = html.Div(
 def get_pie_chart(entered_site):
     logging.debug("Start Applicationa")
     if entered_site == "ALL":
-        fig = px.pie(spacex_df, values="class", names="pie chart names", title="title")
+        fig = px.pie(spacex_df, values="class", names="pie chart names", title="Total Success Launches for all sites")
         return fig
     else:
         # return the outcomes piechart for a selected site
@@ -68,7 +68,7 @@ def get_pie_chart(entered_site):
             spacex_df[spacex_df["Launch Site"] == entered_site],
             values="class",
             names="pie chart names",
-            title="title",
+            title=f"Total Success Launches for site {entered_site}",
         )
         return fig
 
